@@ -68,6 +68,7 @@ public class AuthController {
         );
 
         // userId refresh token 으로 DB 확인
+        // TODO : 이부분 Redis로 대체
         UserRefreshToken userRefreshToken = userRefreshTokenRepository.findByUserId(userId);
         if (userRefreshToken == null) {
             // 없는 경우 새로 등록
@@ -114,6 +115,7 @@ public class AuthController {
         }
 
         // userId refresh token 으로 DB 확인
+        // TODO : 이부분 Redis로 대체
         UserRefreshToken userRefreshToken = userRefreshTokenRepository.findByUserIdAndRefreshToken(userId, refreshToken);
         if (userRefreshToken == null) {
             return ApiResponse.invalidRefreshToken();

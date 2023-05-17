@@ -150,6 +150,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /*
     * Oauth 인증 성공 핸들러
     * */
+    // TODO : 이부분 Redis로 대체
     @Bean
     public OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler() {
         return new OAuth2AuthenticationSuccessHandler(
